@@ -31,9 +31,10 @@ public class UserMealsUtil {
 
         // создаем мапу для подсчета калорий
         HashMap<LocalDate, Integer> mapDateCalories = new HashMap<>();
-
+        // тест сегодняшнего коммита
         for (UserMeal userMeal : meals) {
             LocalDate localDate = userMeal.getDateTime().toLocalDate();
+
             // если значения нет, пихаем его, если оно есть, то прибавляем
             if (!mapDateCalories.containsKey(localDate)) {
                 mapDateCalories.put(localDate, userMeal.getCalories());
