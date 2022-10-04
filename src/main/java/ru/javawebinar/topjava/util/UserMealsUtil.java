@@ -69,6 +69,7 @@ public class UserMealsUtil {
 
         Map<LocalDateTime, Long> tmpMap = meals.stream().collect(Collectors.groupingBy(UserMeal::getDateTime, Collectors.counting()));
 
+        // просто вывод на экран промежуточных данных для проверки
         for (Map.Entry<LocalDateTime, Long> entry : tmpMap.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
