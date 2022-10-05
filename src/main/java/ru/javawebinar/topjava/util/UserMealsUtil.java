@@ -74,14 +74,16 @@ public class UserMealsUtil {
         System.out.println("Поехали стримачительно");
         // для начала надо создать группировку по датам и запихать ее в мапу
 
-
         Map<LocalDate, Integer> tmpMap = meals.stream().collect(Collectors.groupingBy(m -> m.getDateTime().toLocalDate(), Collectors.summingInt(UserMeal::getCalories)));
 
         for (Map.Entry<LocalDate, Integer> entry : tmpMap.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
-        
+        // теперь у нас есть хранилище с мапой, и мы можем это использовать для создания новых объектов
+
+//        List<UserMealWithExcess> mealsTo = meals.stream().
+
         return null;
     }
 }
